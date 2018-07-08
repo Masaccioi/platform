@@ -1,0 +1,57 @@
+@import '../themes/default.css';
+
+/****global的样式****/
+html {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    background-color: $color10;
+    height: 100%;
+}
+/****text wrap****/
+:global .ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+:global .word-break {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+/****fontStyle****/
+:global .normal {
+    font-style: normal;
+}
+/****fontWeight****/
+:global .thin {
+    font-weight: normal;
+}
+:global .bold {
+    font-weight: bold;
+}
+
+/****清楚浮动样式****/
+:global .clearfix {
+    *zoom: 1;
+}
+:global .clearfix:before,
+:global .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+:global .clearfix:after {
+    clear: both;
+}
+
+/****ant-popup 添加static样式****/
+:global .am-popup-static {
+    animation: none !important;
+    bottom: 0;
+}
+
+:global .am-list-first-child .am-list-body {
+    border-top: none;
+}

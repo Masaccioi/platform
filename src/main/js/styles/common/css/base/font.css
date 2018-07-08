@@ -1,0 +1,38 @@
+@import "../themes/default.css";
+
+/****text wrap****/
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.word-break {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+/****fontStyle****/
+.normal {
+    font-style: normal;
+}
+/****fontWeight****/
+.thin {
+    font-weight: normal;
+}
+.bold {
+    font-weight: bold;
+}
+
+/****清楚浮动样式****/
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
