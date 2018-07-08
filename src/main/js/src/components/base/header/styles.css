@@ -1,0 +1,48 @@
+
+.container{
+    width: 100%;
+    text-align: center;
+}
+.header{
+    height: 135px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 3px solid rgba(191, 0, 0, 1);
+}
+.header-logo{
+    float: left;
+    width: 200px;
+    height: 70px;
+    background: url('img/logo.jpg') no-repeat;
+}
+.header-info-box{
+    float: right;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.header-info{
+    width: 50%;
+    font-size: 1.08em;
+    font-weight: 700;
+    color: #666;
+    line-height: 40px;
+}
+.navigation{
+    margin: 20px; 
+}
+.navigation ul li {
+    display: inline-block;
+    padding: 5px 40px;
+    color: #666;
+    border-right: 1px solid #666;
+    cursor: pointer;
+}
+.icon-phone{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+.icon-phone:before{
+    content: 'f095';
+}

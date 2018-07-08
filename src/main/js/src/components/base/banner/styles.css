@@ -1,0 +1,35 @@
+.banner-item {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.banner-item-title{
+    font-size: 1.38em;
+    line-height: 40px;
+    border-bottom: 2px solid #eee;
+}
+.title-icon{
+    margin: 0 10px;    
+    font-size: 1.7em;
+    color: #bf0000;
+    font-weight: 700;
+}
+.banner-item-content{
+    padding: 5px;
+}
+.product{
+    display: flex;
+}
+.product-img{
+
+}
+.product-info{
+
+}
+.address-img{
+    width: 216px;
+    height: 316px;
+    background: url('img/address.png') no-repeat;
+}

@@ -4,6 +4,7 @@ import authUtils from './utils/authUtils.js'
 import dateUtils from './utils/dateUtils.js'
 import IndexSmart from './containers/index.js'
 import ExampleSmart from './containers/example.js'
+import HomeSmart from './containers/home.js'
 
 let Page404 = () => (<div><h1>FIXME FIXME 404 404</h1></div>)
 let PageNodes = () => (<div><h1>PageNodes</h1></div>)
@@ -29,9 +30,9 @@ export default function getRoutes({ getState, dispatch }) {
 
     return (
         <Route path='' component={IndexSmart}>
-            {/* <IndexRoute component={ExampleSmart}/> */}
-            <Route path='example' component={ExampleSmart} />
-            <Route path='*' component={ExampleSmart} status={404}/>
+            <IndexRoute component={HomeSmart}/>
+            <Route path='home' component={HomeSmart} />
+            <Route path='*' component={HomeSmart} status={404}/>
         </Route>
     )
 }

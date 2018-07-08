@@ -1,0 +1,13 @@
+.container{
+    width: 100%;
+}
+.hot-product{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.product{
+    width: 100px;
+    height: 50px;
+    background: url('img/product.gif') no-repeat;
+}
