@@ -1,17 +1,18 @@
 import { Provider, connect } from 'react-redux'
 import Home from '../components/home/index'
-// import * as example from '../actions/example.js'
+import * as home from '../actions/home.js'
 
 function mapStateToProps(state) {
     return {
-        // examples: state[curLang].examples
+        adviceList: state.home.adviceList,
+        noticeList: state.home.noticeList
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        // switchLanguage: () => dispatch(i18.switchLanguage()),
-        // getExamples: () => dispatch(example.getExamples())
+        getAdvice: payload => dispatch(home.getAdvice(payload)),
+        getNotice: payload => dispatch(home.getNotice(payload))
     }
 }
 

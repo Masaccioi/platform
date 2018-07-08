@@ -2,4 +2,6 @@
 .container{
     font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
     font-size: 13px;
+    min-width: 1200px;
+    overflow-x: scroll;
 }

@@ -1,11 +1,13 @@
 import React, { PropTypes } from 'react'
 import styles from './styles.css'
+import moment from 'moment'
 
 export default class Banner extends React.Component {
     constructor(props) {
         super(props)
     }
     render() {
+        const { adviceList = [], noticeList = [] } = this.props
         return (
             <div className={styles['container']}>
                 <div className={styles['banner-item']}>
@@ -13,10 +15,16 @@ export default class Banner extends React.Component {
                         <span className={styles['title-icon']}> || </span>
                         お知らせ
                     </div>
-                    <div className={styles['banner-item-content']}>
-                        <p>7/2 熱い日にご来店のお客様は大変ですよねさて、本日限定！！</p>
-                        <p>7/2 熱い日にご来店のお客様は大変ですよねさて、本日限定！！</p>
-                        <p>7/2 熱い日にご来店のお客様は大変ですよねさて、本日限定！！</p>
+                    <div>
+                    { 
+                        noticeList.map(item => {
+                            return (
+                                <div className={styles['banner-item-content']}>
+                                    {`${moment(item.createTime).format('MM/DD')} ${item.content}`}
+                                </div>
+                            )
+                        })
+                    }
                     </div>
 
                 </div>
@@ -26,15 +34,20 @@ export default class Banner extends React.Component {
                         最新情報
                     </div>
                     <div className={styles['banner-item-content']}>
-                        <div className={styles['product']}>
-                            <figcaption className={styles['product-img']}>
-                                <div className={styles['address-img']}/>
-                                <span>7-12</span>
-                            </figcaption>
-                            <p className={styles['product-info']}>
-                            xxxxxxxxx
-                            </p>
-                        </div>
+                    {
+                        adviceList.map(item => {
+                            return <div className={styles['product']}>
+                                <figcaption className={styles['product-img']}>
+                                    <img src={item.imageUrl}/>
+                                    <span>{moment(item.createTime).format('YYYY/MM/DD')}</span>
+                                </figcaption>
+                                <p className={styles['product-info']}>
+                                    {item.content}
+                                </p>
+                            </div>
+                        })
+                    }
+                        
                     </div>
 
                 </div>
@@ -51,4 +64,8 @@ export default class Banner extends React.Component {
             </div>
         )
     }
+}
+Banner.propTypes = {
+    adviceList: PropTypes.array,
+    noticeList: PropTypes.array
 }

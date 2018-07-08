@@ -9,6 +9,7 @@
     height: 63px;
     line-height: 63px;
     text-align: center;
+    font-size: 1.07em;
     color: #bf0000;
     background: #fff;
     border-bottom: 1px solid #eee;
@@ -27,11 +28,46 @@
 .search-box .search-button{
     position: absolute;
     width: 65px;
-    height: 39px;
+    height: 40px;
     right: -1px;
-    top: 12px;
+    top: 10px;
     background-color: #bf0000;
 }
 .buy-text{
     font-size: 1.38em;
+}
+.icon{
+    position: relative;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon-search{
+    width: 30px;
+    height: 30px;
+    background-image: url('img/search.png');
+}
+.icon-nav{
+    top: 7px;
+    left: -5px;
+    width: 30px;
+    height: 30px;
+    background-image: url('img/nav.png');
+}
+.icon-twitter{
+    top: 7px;
+    left: -4px;
+    width: 30px;
+    height: 30px;
+    background-image: url('img/twitter.png');
+}
+.icon-line{
+    top: 7px;
+    left: -5px;
+    width: 28px;
+    height: 25px;
+    background-image: url('img/line.png');
+}
+.twitter-url{
+    color: #bf0000;
 }

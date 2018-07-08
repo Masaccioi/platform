@@ -8,13 +8,21 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props)
     }
+    
     render() {
         return (
             <div className={styles['container']}>
                 <Header />
-                <Content />
+                <Content {...this.props}/>
                 <Footer />
             </div>
         )
     }
 }
+Home.propTypes = {
+    getAdvice: PropTypes.func,
+    getNotice: PropTypes.func,
+    adviceList: PropTypes.array,
+    noticeList: PropTypes.array
+}
+

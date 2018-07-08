@@ -3,6 +3,7 @@
 import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
+import '../styles/common/css/base/reset.css'
 import configureStore from './store/configureStore'
 
 const store = configureStore()

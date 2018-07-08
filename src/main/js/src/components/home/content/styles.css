@@ -1,12 +1,15 @@
 .container{
     display: flex;
+    justify-content:space-between;
+    flex-wrap: nowrap;
     padding: 10px;    
     width: 100%;
     background: #f2f2f2;
+    box-sizing: border-box;
 }
 .sidebar,.banner{
-    flex-grow: 1;
+    flex: 1;
 }
 .main{
-    flex-grow: 2;
+    flex: 2;
 }

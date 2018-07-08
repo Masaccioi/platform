@@ -18,15 +18,28 @@
 }
 .banner-item-content{
     padding: 5px;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+.banner-item-content:nth-child(1){
+    margin-top: 10px;
 }
 .product{
     display: flex;
 }
 .product-img{
-
+    flex: 1;
+    height: auto;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+img{
+    width: 100%;
 }
 .product-info{
-
+    padding: 5px;
+    flex: 2;
 }
 .address-img{
     width: 216px;

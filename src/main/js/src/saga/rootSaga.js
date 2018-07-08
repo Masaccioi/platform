@@ -6,10 +6,13 @@ import { delay, takeEvery, eventChannel, END } from 'redux-saga'
 import * as actionTypes from '../actions/actionTypes.js'
 import * as authSaga from './authSaga'
 import * as exampleSaga from './exampleSaga.js'
+import * as homeSaga from './homeSaga.js'
 
 export default function* rootSaga() {
     yield takeEvery(actionTypes.LOGIN_REQUEST, mapPayload(authSaga.login))
     yield takeEvery(actionTypes.GET_EXAMPLES_REQUEST, mapPayload(exampleSaga.getExamples))
+    yield takeEvery(actionTypes.GET_ADVICE_REQUEST, mapPayload(homeSaga.getAdvice))
+    yield takeEvery(actionTypes.GET_NOTICE_REQUEST, mapPayload(homeSaga.getNotice))
 }
 
 /**
