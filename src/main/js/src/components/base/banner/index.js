@@ -38,7 +38,11 @@ export default class Banner extends React.Component {
                         adviceList.map(item => {
                             return <div className={styles['product']}>
                                 <figcaption className={styles['product-img']}>
-                                    <img src={item.imageUrl}/>
+                                    <img src={item.imageUrl || ''} onError={
+                                        (e)=>{
+                                            e.target.src ='./static/img/defaultImg.png'
+                                            e.onError = null
+                                        }}/>
                                     <span>{moment(item.createTime).format('YYYY/MM/DD')}</span>
                                 </figcaption>
                                 <p className={styles['product-info']}>

@@ -40,3 +40,49 @@ export function* getAdvice(payload) {
     }
 }
 
+export function* getHotProduct(payload) {
+    try {      
+        let response = yield homeService.getHotProduct()
+        if(response.code === '200') {
+            yield put({
+                type: actionTypes.GET_HOT_PRODUCT_SUCCESS,
+                response: response && response.data
+            })
+        } else {
+            throw response.message
+        }
+    } catch (error) {
+        yield put({ type: actionTypes.GET_HOT_PRODUCT_FAILURE, error })
+    }
+}
+export function* getOperator() {
+    try {      
+        let response = yield homeService.getOperator()
+        if(response.code === '200') {
+            yield put({
+                type: actionTypes.GET_OPERATOR_SUCCESS,
+                response: response && response.data
+            })
+        } else {
+            throw response.message
+        }
+    } catch (error) {
+        yield put({ type: actionTypes.GET_OPERATOR_FAILURE, error })
+    }
+}
+export function* getMainProduct(id) {
+    try {      
+        let response = yield homeService.getMainProduct(id)
+        if(response.code === '200') {
+            yield put({
+                type: actionTypes.GET_MAIN_PRODUCT_SUCCESS,
+                response: response && response.data
+            })
+        } else {
+            throw response.message
+        }
+    } catch (error) {
+        yield put({ type: actionTypes.GET_MAIN_PRODUCT_FAILURE, error })
+    }
+}
+

@@ -8,7 +8,7 @@
     "array-bracket-spacing": [ 0, "always" ],
     "object-curly-spacing": [ 0, "always" ],
     "jsx-quotes": [ 2, "prefer-single" ],
-    "react/jsx-no-bind": 2,
+    // "react/jsx-no-bind": 2,
     "react/jsx-pascal-case": 2,
     "react/jsx-no-duplicate-props": 2,
     "react/display-name": 2,

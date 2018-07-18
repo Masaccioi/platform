@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Provider } from 'react-redux'
+import { Provider,MetaProvider } from 'react-redux'
 import { ReduxRouter } from 'redux-router'
 import Intl from './i18n/intl'
 import getRoutes from './routes'

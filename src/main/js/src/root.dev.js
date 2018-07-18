@@ -16,7 +16,7 @@ export default class Root extends Component {
                             <ReduxRouter>
                                 { getRoutes(store) }{/*https://github.com/acdlite/redux-router/pull/62*/}
                             </ReduxRouter>
-                            <DevTools />
+                            {/* <DevTools /> */}
                         </div>
                     </Intl>
                 </Provider>

@@ -35,7 +35,7 @@ export default class Index extends Component {
 
     render() {
         return (
-            <div style={{ overflow: 'hidden' }}>
+            <div>
                 <Loading isLoading={this.props.isLoading}/>
                 {this.props.children}
             </div>

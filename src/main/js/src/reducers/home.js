@@ -17,10 +17,28 @@ function noticeList(state = [], action) {
         return state
     }
 }
-
+function hotProductList(state = [], action) {
+    switch (action.type) {
+    case actionTypes.GET_HOT_PRODUCT_SUCCESS:
+    case actionTypes.GET_MAIN_PRODUCT_SUCCESS:
+        return action.response
+    default:
+        return state
+    }
+}
+function operator(state = [], action) {
+    switch (action.type) {
+    case actionTypes.GET_OPERATOR_SUCCESS:
+        return action.response
+    default:
+        return state
+    }
+}
 let home = combineReducers({
     adviceList,
-    noticeList
+    noticeList,
+    hotProductList,
+    operator
 })
 
 export default home

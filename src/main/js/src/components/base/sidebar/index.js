@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import styles from './styles.css'
-
+import '../../../../static/lib/widgets.js'
 export default class Sidebar extends React.Component {
     constructor(props) {
         super(props)
@@ -19,13 +19,17 @@ export default class Sidebar extends React.Component {
                     </div>
                     <div className={styles['sidebar-item-row'] + ' ' + styles['buy-text']}>
                         <i className={styles['icon'] + ' ' + styles['icon-nav']}/>
-                        買取依頼書
+                        <a className={styles['link-text']} href='https://www.1-chome.com/keitai' target='_blank'>買取依頼書</a>
+                    </div>
+                    <div className={styles['sidebar-item-row'] + ' ' + styles['buy-text']}>
+                        <i className={styles['icon'] + ' ' + styles['icon-message']}/>
+                        <a className={styles['link-text']} href='/appraisal' target='_blank'>無料査定</a>
                     </div>
                 </div>
                 <div className={styles['sidebar-item']}>
                     <div className={styles['sidebar-item-row']}>
                         <i className={styles['icon'] + ' ' + styles['icon-twitter']}/>
-                        <a className={styles['twitter-url']} href='https://twitter.com/sirorom_ichiban' target='_blank'>@sirorom_ichiban</a>
+                        <a className={styles['link-text']} href='https://twitter.com/sirorom_ichiban' target='_blank'>@sirorom_ichiban</a>
                     </div>
                     <div className={styles['sidebar-item-row']}>
                         <i className={styles['icon'] + ' ' + styles['icon-line']}/>
@@ -33,6 +37,9 @@ export default class Sidebar extends React.Component {
                     </div>
                 </div>
                 <div className={styles['sidebar-item']}>
+                    <div>
+                        <a className='twitter-timeline' data-width='100%' data-tweet-limit='1' data-height='400' data-dnt='true' href='https://twitter.com/sirorom_ichiban?ref_src=twsrc%5Etfw'>Tweets by sirorom_ichiban</a>
+                    </div>
                 </div>
             </div>
         )

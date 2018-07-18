@@ -13,28 +13,29 @@ export default class Header extends React.Component {
                 <div className={styles['header-info-box']}>
                     <div className={styles['header-info']}>
                         <i className={styles['icon'] + ' ' + styles['icon-phone']}/>
-                        <span>03-5958-5800</span>
+                        <p>03-5958-5800</p>
                     </div>
                     <div className={styles['header-info']}>
                         <i className={styles['icon'] + ' ' + styles['icon-mobile']}/>
-                        <span>080-4605-1888</span>
+                        <p>080-4605-1888</p>
                     </div>
                     <div className={styles['header-info']}>
                         <i className={styles['icon'] + ' ' + styles['icon-time']}/>
-                        <span>12:00 ~ 21:00 年中無休</span>
+                        <p>12:00 ~ 21:00 年中無休</p>
                     </div>
                     <div className={styles['header-info']}>
                         <i className={styles['icon'] + ' ' + styles['icon-email']}/>
-                        <span>service@sirorom-1.jp</span>
+                        <p>service@sirorom-1.jp</p>
                     </div>
                 </div>
             </div>
             <div className={styles['navigation']}>
                 <ul>
-                    <li>ホーム</li>
+                    <li style={{color:'#bf0000'}}>ホーム</li>
                     <li>携帯</li>
                     <li>電気</li>
                     <li>⽇⽤品</li>
+                    <li>無料査定</li>
                     <li>店舗案内</li>
                 </ul>
             </div>

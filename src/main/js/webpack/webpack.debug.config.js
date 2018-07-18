@@ -8,7 +8,7 @@ var config = {
     devtool: 'source-map',
     plugins: [
         new webpack.DefinePlugin({
-            'process.env': { NODE_ENV: JSON.stringify('debug') }
+            'process.env': { NODE_ENV: JSON.stringify('development') }
         }),
         new ExtractTextPlugin('app.[contenthash].css', {
             allChunks: true
@@ -30,7 +30,7 @@ var config = {
         }),
         new CopyWebpackPlugin([
             {from: path.join(baseDirName, 'static'), to: path.join(baseDirName, '../webapp/static')},
-            {from: path.join(baseDirName, 'res'), to: path.join(baseDirName, '../webapp/res')},
+            // {from: path.join(baseDirName, 'res'), to: path.join(baseDirName, '../webapp/res')},
             {from: path.join(baseDirName, 'WEB-INF'), to: path.join(baseDirName, '../webapp/WEB-INF')}
         ]),
         new HtmlWebpackPlugin({

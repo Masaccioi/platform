@@ -12,7 +12,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className={styles['container']}>
-                <Header />
+                <Header {...this.props}/>
                 <Content {...this.props}/>
                 <Footer />
             </div>
@@ -23,6 +23,11 @@ Home.propTypes = {
     getAdvice: PropTypes.func,
     getNotice: PropTypes.func,
     adviceList: PropTypes.array,
-    noticeList: PropTypes.array
+    noticeList: PropTypes.array,
+    getHotProduct: PropTypes.func,
+    hotProductList: PropTypes.array,
+    operator: PropTypes.array,
+    getOperator: PropTypes.func,
+    getMainProduct: PropTypes.func
 }
 

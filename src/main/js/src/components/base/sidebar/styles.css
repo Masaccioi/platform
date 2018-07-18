@@ -68,6 +68,13 @@
     height: 25px;
     background-image: url('img/line.png');
 }
-.twitter-url{
+.icon-message{
+    top: 6px;
+    left: -12px;
+    width: 33px;
+    height: 30px;
+    background-image: url('img/message.png');
+}
+.link-text{
     color: #bf0000;
 }

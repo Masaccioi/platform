@@ -14,14 +14,13 @@ export default class Content extends React.Component {
         this.props.getNotice({ page:PAGE, pageSize:PAGESIZE})
     }
     render() {
-        console.log(this.props)
         return (
             <div className={styles['container']}>
                 <div className={styles['sidebar']}>
                     <Sidebar />
                 </div>
                 <div className={styles['main']}>
-                    <Main />
+                    <Main {...this.props}/>
                 </div>
                 <div className={styles['banner']}>
                     <Banner {...this.props}/>
@@ -35,5 +34,10 @@ Content.propTypes = {
     getAdvice: PropTypes.func,
     getNotice: PropTypes.func,
     adviceList: PropTypes.array,
-    noticeList: PropTypes.array
+    noticeList: PropTypes.array,
+    getHotProduct: PropTypes.func,
+    hotProductList: PropTypes.array,
+    operator: PropTypes.array,
+    getOperator: PropTypes.func,
+    getMainProduct: PropTypes.func
 }
