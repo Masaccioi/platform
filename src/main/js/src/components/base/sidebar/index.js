@@ -23,7 +23,7 @@ export default class Sidebar extends React.Component {
                     </div>
                     <div className={styles['sidebar-item-row'] + ' ' + styles['buy-text']}>
                         <i className={styles['icon'] + ' ' + styles['icon-message']}/>
-                        <a className={styles['link-text']} href='/appraisal' target='_blank'>無料査定</a>
+                        <a className={styles['link-text']} href='#/appraisal' target='_blank'>無料査定</a>
                     </div>
                 </div>
                 <div className={styles['sidebar-item']}>

@@ -11,13 +11,14 @@ export function* setAppraisal(options = {}) {
         let response = yield AppraisalService.setAppraisal(options)
         if(response.code === '200') {
             yield put({
-                type: actionTypes.SET_APPRAISAL_SUCCESS
+                type: actionTypes.SET_APPRAISAL_SUCCESS,
+                response: 2
             })
         } else {
             throw response.message
         }
     } catch (error) {
-        yield put({ type: actionTypes.SET_APPRAISAL_FAILURE, error })
+        yield put({ type: actionTypes.SET_APPRAISAL_FAILURE, error, response: 1 })
     }
 }
 

@@ -1,8 +1,68 @@
 .container {
-    widows: 500px;
-    height: 400px;
-    position: relative;
+    width: 500px;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    text-align: center;
+}
+.input-box{
+    display: flex;
+    margin-top: 20px;
+}
+.input, :global(.ant-input-number-input){
+    height: 53px;
+    width: 470px;
+    border: 1px solid #eee;
+    padding-left: 10px;
+}
+.input:hover, .textarea:hover{
+    border: 1px solid #72c02c;
+}
+.form-title{
+    font-size: 17.5px;
+}
+.icon-box{
+    display: inline-block;
+    padding: 17px 10px;
+    border: 1px solid #eee;
+    border-right: none;
+}
+.icon{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon-phone{
+    width: 15px;
+    height: 15px;
+    background-image: url('img/small-phone.png');
+}
+.icon-user{
+    width: 15px;
+    height: 15px;
+    background-image: url('img/user.png');
+}
+.icon-email{
+    width: 15px;
+    height: 15px;
+    background-image: url('img/small-message.png');
+}
+.textarea{
+    width: 496px;
+    height: 123px;
+    border: 1px solid #eee;
+    margin: 20px 0;
+    padding: 10px;
+}
+.button{
+    display: inline-block;
+    color: #fff;
+    padding: 0.93em 1.97em;
+    border-radius: 2px;
+    background: #28a745;
+}
+.button:hover{
+    background: #218838;
+    border-color: #1e7e34;
 }

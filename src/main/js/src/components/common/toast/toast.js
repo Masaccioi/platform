@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from 'styles/components/common/toast/toast.css'
+import styles from './styles.css'
 import { intlShape,defineMessages } from 'react-intl'
 import IntlUtil from 'i18n/intlUtil'
 
