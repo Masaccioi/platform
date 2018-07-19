@@ -1,33 +1,24 @@
+/**
+ * Created by hjx on 7/26/2017.
+ */
 import React, { PropTypes } from 'react'
-import Header from '../base/header/index'
-import Footer from '../base/footer/index'
-import Content from './content/index'
-import '../../../styles/common/css/base/reset.css'
-import styles from './styles.css'
-export default class Home extends React.Component {
+
+
+export default class Example extends React.Component {
+
     constructor(props) {
         super(props)
     }
-    
+
+
     render() {
         return (
-            <div className={styles['container']}>
-                <Header {...this.props}/>
-                <Content {...this.props}/>
-                <Footer />
+            <div>
+                hello,world
             </div>
         )
     }
 }
-Home.propTypes = {
-    getAdvice: PropTypes.func,
-    getNotice: PropTypes.func,
-    adviceList: PropTypes.array,
-    noticeList: PropTypes.array,
-    getHotProduct: PropTypes.func,
-    hotProductList: PropTypes.array,
-    operator: PropTypes.array,
-    getOperator: PropTypes.func,
-    getMainProduct: PropTypes.func
-}
 
+Example.propTypes = {
+}
