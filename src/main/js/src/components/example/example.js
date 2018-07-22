@@ -3,7 +3,7 @@
  */
 import React, { PropTypes } from 'react'
 import { intlShape, defineMessages, FormattedMessage } from 'react-intl'
-import IntlUtil from 'i18n/intlUtil'
+// import IntlUtil from 'i18n/intlUtil'
 
 const prefix = 'components.example.example'
 const message = defineMessages({
@@ -39,7 +39,7 @@ export default class Example extends React.Component {
     render() {
         return (
             <div>
-                <h1 onClick={this._onClick}>{IntlUtil.formatMessage(this, message.switchlang)}</h1>
+                {/* <h1 onClick={this._onClick}>{IntlUtil.formatMessage(this, message.switchlang)}</h1> */}
                 {this.renderExamples()}
             </div>
         )
@@ -52,6 +52,6 @@ Example.propTypes = {
     getExamples: PropTypes.func
 }
 
-Example.contextTypes = {
-    intl: intlShape
-}
+// Example.contextTypes = {
+//     intl: intlShape
+// }

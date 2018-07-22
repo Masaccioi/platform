@@ -13,11 +13,11 @@ export default class Header extends React.Component {
                 <div className={styles['header-info-box']}>
                     <div className={styles['header-info']}>
                         <i className={styles['icon'] + ' ' + styles['icon-phone']}/>
-                        <p>03-5958-5800</p>
+                        <p><a href='tel:03-5958-5800' className={styles['link-text']}>03-5958-5800</a></p>
                     </div>
                     <div className={styles['header-info']}>
                         <i className={styles['icon'] + ' ' + styles['icon-mobile']}/>
-                        <p>080-4605-1888</p>
+                        <p><a href='tel:080-4605-1888' className={styles['link-text']}>080-4605-1888</a></p>
                     </div>
                     <div className={styles['header-info']}>
                         <i className={styles['icon'] + ' ' + styles['icon-time']}/>
@@ -25,7 +25,7 @@ export default class Header extends React.Component {
                     </div>
                     <div className={styles['header-info']}>
                         <i className={styles['icon'] + ' ' + styles['icon-email']}/>
-                        <p>service@sirorom-1.jp</p>
+                        <p><a href='mailto:service@sirorom-1.jp' className={styles['link-text']}>service@sirorom-1.jp</a></p>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@ export default class Header extends React.Component {
                     <li>携帯</li>
                     <li>電気</li>
                     <li>⽇⽤品</li>
-                    <li>無料査定</li>
+                    <li><a className={styles['link-text']} href='#/appraisal' target='_blank'>無料査定</a></li>
                     <li>店舗案内</li>
                 </ul>
             </div>

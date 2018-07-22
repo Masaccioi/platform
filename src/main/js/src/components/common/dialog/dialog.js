@@ -1,7 +1,7 @@
-import styles from 'styles/components/common/dialog/dialog.css'
+import styles from './dialog.css'
 import React from 'react'
 import { intlShape,defineMessages } from 'react-intl'
-import IntlUtil from 'i18n/intlUtil'
+// import IntlUtil from 'i18n/intlUtil'
 import { bind } from '../../../utils/bindUtil'
 
 const prefix = 'components.common.dialog.dialog'
@@ -56,7 +56,7 @@ export default class GiftDialog extends React.Component {
         this._DialogShow = bind(this.DialogShow, this)
         this._DialogClose = bind(this.DialogClose, this)
         this._handleConfirm = bind(this.handleConfirm, this)
-
+        this._handleCancel = bind(this.handleCancel, this)
     }
 
     DialogShow() {
@@ -80,7 +80,9 @@ export default class GiftDialog extends React.Component {
     handleConfirm(chooseType) {
         this.props.handleConfirm(chooseType)
     }
-
+    handleCancel(chooseType) {
+        this.props.handleCancel(chooseType)
+    }
     getDialog() {
         let header,footer,children
         let msg = this.props.msg
@@ -95,17 +97,28 @@ export default class GiftDialog extends React.Component {
                     <div className={styles.fontMiddle}>{msg}</div>
                 </div>
             if(this.props.type == 'alert') {
-                header = IntlUtil.formatMessage(this, message.nd_14684031742447gpovw)
+                // header = IntlUtil.formatMessage(this, message.nd_14684031742447gpovw)
+                header = '提示信息'
                 footer =
                     <div className={styles.footer}>
-                        <div className={styles.confirmBtn} onClick={this._DialogClose}>{IntlUtil.formatMessage(this, message.nd_1468403174246qyy230)}</div>
+                        <div className={styles.confirmBtn} onClick={this._DialogClose}>
+                        {/* {IntlUtil.formatMessage(this, message.nd_1468403174246qyy230)} */}
+                        确定
+                        </div>
                     </div>
             }else if(this.props.type == 'confirm') {
-                header = IntlUtil.formatMessage(this, message.nd_1468403174246dwndoh)
+                header = '确认信息'
+                // header = IntlUtil.formatMessage(this, message.nd_1468403174246dwndoh)
                 footer =
                     <div className={styles.footer}>
-                        <div className={styles.confirmBtn} onClick={this._handleConfirm.bindArgs(chooseType)}>{IntlUtil.formatMessage(this, message.nd_1468403174246qyy230)}</div>
-                        <div className={styles.cancelBtn} onClick={this._DialogClose}>{IntlUtil.formatMessage(this, message.nd_1468403174247z91dvc)}</div>
+                        <div className={styles.confirmBtn} onClick={this._handleConfirm.bindArgs(chooseType)}>
+                        {/* {IntlUtil.formatMessage(this, message.nd_1468403174246qyy230)} */}
+                        提出を続ける
+                        </div>
+                        <div className={styles.cancelBtn} onClick={this._handleCancel.bindArgs(chooseType)}>
+                        {/* {IntlUtil.formatMessage(this, message.nd_1468403174247z91dvc)} */}
+                        家に帰る
+                        </div>
                     </div>
             } else if(this.props.type == 'sure') {
                 footer =
@@ -117,7 +130,10 @@ export default class GiftDialog extends React.Component {
                 footer =
                     <div className={styles.footer}>
                         <div className={styles.confirmBtn} onClick={this._handleConfirm.bindArgs(chooseType)}>{IntlUtil.formatMessage(this, message.nd_dialogShowNoMore)}</div>
-                        <div className={styles.cancelBtn} onClick={this._DialogClose}>{IntlUtil.formatMessage(this, message.nd_1468403174249msjmsq)}</div>
+                        <div className={styles.cancelBtn} onClick={this._DialogClose}>
+                        {/* {IntlUtil.formatMessage(this, message.nd_1468403174249msjmsq)} */}
+                        close
+                        </div>
                     </div>
             }
         }
@@ -162,13 +178,14 @@ export default class GiftDialog extends React.Component {
         )
     }
 }
-GiftDialog.contextTypes = {
-    intl: intlShape
-}
+// GiftDialog.contextTypes = {
+//     intl: intlShape
+// }
 GiftDialog.propTypes = {
     justOpened: React.PropTypes.func,
     justClosed: React.PropTypes.func,
     handleConfirm: React.PropTypes.func,
+    handleCancel: React.PropTypes.func,
     msg: React.PropTypes.string,
     chooseType: React.PropTypes.string,
     children: React.PropTypes.element,

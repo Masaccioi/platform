@@ -3,22 +3,22 @@
  */
 import React from 'react'
 import styles from './confirmBox.css'
-import { intlShape,defineMessages } from 'react-intl'
-import IntlUtil from 'i18n/intlUtil'
-const prefix = 'common.ConfirmBox'
-// 抽取硬编码数据
-const messages = defineMessages({
-    confirm: {
-        id: `${prefix}.confirm`,
-        defaultMessage: '确定',
-        description:'confirm'
-    },
-    cancel: {
-        id: `${prefix}.cancel`,
-        defaultMessage: '取消',
-        description:'cancel'
-    }
-})
+// import { intlShape,defineMessages } from 'react-intl'
+// import IntlUtil from 'i18n/intlUtil'
+// const prefix = 'common.ConfirmBox'
+// // 抽取硬编码数据
+// const messages = defineMessages({
+//     confirm: {
+//         id: `${prefix}.confirm`,
+//         defaultMessage: '确定',
+//         description:'confirm'
+//     },
+//     cancel: {
+//         id: `${prefix}.cancel`,
+//         defaultMessage: '取消',
+//         description:'cancel'
+//     }
+// })
 
 export default class ConfirmBox extends React.Component {
 
@@ -43,8 +43,14 @@ export default class ConfirmBox extends React.Component {
                         {this.props.comfirmTips}
                     </div>
                     <div className={styles['btn-box']}>
-                        <div className={styles['btn-confirm']} onClick={this.onConfirm.bind(this)}>{IntlUtil.formatMessage(this, messages.confirm)}</div>
-                        <div className={styles['btn-cancel']} onClick={this.onCancelConfirm.bind(this)}>{IntlUtil.formatMessage(this, messages.cancel)}</div>
+                        <div className={styles['btn-confirm']} onClick={this.onConfirm.bind(this)}>
+                        {/* {IntlUtil.formatMessage(this, messages.confirm)} */}
+                        提出を続ける
+                        </div>
+                        <div className={styles['btn-cancel']} onClick={this.onCancelConfirm.bind(this)}>
+                        {/* {IntlUtil.formatMessage(this, messages.cancel)} */}
+                        家に帰る
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,6 +58,6 @@ export default class ConfirmBox extends React.Component {
     }
 }
 
-ConfirmBox.contextTypes = {
-    intl: intlShape
-}
+// ConfirmBox.contextTypes = {
+//     intl: intlShape
+// }

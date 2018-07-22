@@ -77,7 +77,7 @@ LanguagesSwitch.propTypes = {
     setLang: React.PropTypes.func.isRequired
 }
 
-LanguagesSwitch.contextTypes = {
-    intl: intlShape
-}
+// LanguagesSwitch.contextTypes = {
+//     intl: intlShape
+// }
 

@@ -16,20 +16,21 @@ module.exports = {
         app: [
             './src/index'
         ],
-        reactlibs: ['react', 'react-dom', 'react-redux', 'redux', 'react-intl',
-            'react-router', 'redux-router', 'redux-thunk', 'redux-saga', 'intl'],
+        reactlibs: ['react', 'react-dom', 'react-redux', 'redux',
+            'react-router', 'redux-router', 'redux-thunk', 'redux-saga'],
         vendors: ['rx-lite', 'crypto-js', 'object-assign', 'brace',
             'pouchdb', 'pouchdb-find', 'jquery'],
         libs: [
-            './static/lib/ueditor/third-party/jquery-1.10.2.min.js',
-            './static/lib/ueditor/ueditor.config.js',
-            './static/lib/ueditor/ueditor.all.js',
-            './static/lib/ueditor/lang/en/en.js',
-            './static/lib/ueditor/lang/zh-cn/zh-cn.js',
-            './static/lib/ZeroClipboard.min.js',
-            './static/lib/detect-element-resize.js',
-            './static/lib/ndpay.js',
-            './static/lib/layer/layer.js']
+            // './static/lib/ueditor/third-party/jquery-1.10.2.min.js',
+            // './static/lib/ueditor/ueditor.config.js',
+            // './static/lib/ueditor/ueditor.all.js',
+            // './static/lib/ueditor/lang/en/en.js',
+            // './static/lib/ueditor/lang/zh-cn/zh-cn.js',
+            // './static/lib/ZeroClipboard.min.js',
+            // './static/lib/detect-element-resize.js',
+            // './static/lib/ndpay.js',
+            // './static/lib/layer/layer.js'
+        ]
     },
     output: {
         path: path.join(baseDirName, '../webapp'),
@@ -79,7 +80,7 @@ module.exports = {
         alias: {
             basecomponent: path.resolve(baseDirName, 'src/components/base'),
             styles: path.resolve(baseDirName, 'styles'),
-            i18n: path.resolve(baseDirName, 'src/i18n'),
+            // i18n: path.resolve(baseDirName, 'src/i18n'),
             img: path.resolve(baseDirName, 'static/img'),
             static: path.resolve(baseDirName, 'static'),
             base: path.resolve(baseDirName, 'src/components/base'),
@@ -126,11 +127,11 @@ module.exports = {
                 test: /\.(png|jpg|jpeg|gif|ico|cur)$/,
                 loaders: ['url-loader']
             },
-            {test: /\.svg(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=image/svg+xml'},
-            {test: /\.woff(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/font-woff'},
-            {test: /\.woff2(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/font-woff2'},
-            {test: /\.[ot]tf(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/octet-stream'},
-            {test: /\.eot(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/vnd.ms-fontobject'}
+            // {test: /\.svg(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=image/svg+xml'},
+            // {test: /\.woff(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/font-woff'},
+            // {test: /\.woff2(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/font-woff2'},
+            // {test: /\.[ot]tf(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/octet-stream'},
+            // {test: /\.eot(\?t=[0-9]+)?$/, loader: 'url?limit=65000&mimetype=application/vnd.ms-fontobject'}
         ]
     },
     postcss: function () {

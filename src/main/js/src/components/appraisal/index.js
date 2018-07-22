@@ -5,7 +5,7 @@ import Input from 'antd/lib/input'
 import InputNumber from 'antd/lib/input-number' 
 import Toast from '../common/toast/toast'
 import autobind from '../../utils/autobind'
-
+import Confirm from '../common/confirmBox/confirmBox'
 const { TextArea } = Input
 export default class Appraisal extends React.Component {
     constructor(props) {
@@ -14,17 +14,17 @@ export default class Appraisal extends React.Component {
             name: '', 
             email: '', 
             phone: '', 
-            content: ''
+            content: '',
+            dialogShow: false
         }
     }
 
     componentWillReceiveProps(nextProps) {
         if(nextProps.setAppraisalFlag !== this.props.setAppraisalFlag) {
             if(nextProps.setAppraisalFlag == 2 ) {
-                this.refs.toast.makeText('提出済み', 3000)
-                setTimeout(() => {
-                    window.location.href = '#/'
-                }, 3000)
+                this.setState({
+                    dialogShow: true
+                })
             } else if (nextProps.setAppraisalFlag == 1) {
                 this.refs.toast.makeText('送信に失敗しました', 3000)
             }
@@ -60,10 +60,25 @@ export default class Appraisal extends React.Component {
     onChangeNumber(value) {
         this.setState({phone:value})
     }
+    @autobind
+    handleConfirm() {
+        this.setState({
+            dialogShow: false
+        })
+        this.setState({content:''})
+    }
+    @autobind
+    handleCancel() {
+        this.setState({
+            dialogShow: false
+        })
+        window.location.href = '#/'
+    }
     render() {
         const { name, email, phone, content } = this.state
         return (
             <div className={styles['container']}>
+            <div className={styles['form-box']}>
                 <strong className={styles['form-title']}>無料査定・お問い合わせ </strong>
                 <div className={styles['input-box']}>
                     <div className={styles['icon-box']}>
@@ -102,13 +117,24 @@ export default class Appraisal extends React.Component {
                     row={5}
                 />
                 <div className={styles['button']} onClick={this.onConfirm}>送信する</div>
+                </div>
                 <Toast ref='toast'/>
+                {
+                    <Confirm
+                        show={this.state.dialogShow}
+                        comfirmTips={'提出された'}
+                        onConfirm={this.handleConfirm}
+                        onCancelConfirm={this.handleCancel}
+                    >
+                        <div>提出された</div>
+                    </Confirm>
+                }
             </div>
         )
     }
 }
 Appraisal.propTypes = {
-    setAppraisalFlag: PropTypes.bool,
+    setAppraisalFlag: PropTypes.number,
     setAppraisal: PropTypes.func
 }
 

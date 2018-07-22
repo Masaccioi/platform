@@ -34,7 +34,7 @@ var config = {
             {from: path.join(baseDirName, 'WEB-INF'), to: path.join(baseDirName, '../webapp/WEB-INF')}
         ]),
         new HtmlWebpackPlugin({
-            title: '钱包',
+            title: 'platform',
             template: path.resolve(__dirname, 'index-template.html'),
             inject: 'body',
             filename: 'index.html'

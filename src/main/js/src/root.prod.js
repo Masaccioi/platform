@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Provider,MetaProvider } from 'react-redux'
 import { ReduxRouter } from 'redux-router'
-import Intl from './i18n/intl'
+// import Intl from './i18n/intl'
 import getRoutes from './routes'
 
 export default class Root extends Component {
@@ -10,11 +10,11 @@ export default class Root extends Component {
         return (
             <Provider store={store}>
                 <MetaProvider store={store}>
-                    <Intl>
+                    {/* <Intl> */}
                         <ReduxRouter>
                             { getRoutes(store) }
                         </ReduxRouter>
-                    </Intl>
+                    {/* </Intl> */}
                 </MetaProvider>
             </Provider>
         )

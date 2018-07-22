@@ -44,5 +44,5 @@ img{
 .address-img{
     width: 216px;
     height: 316px;
-    background: url('img/address.png') no-repeat;
+    background: url('./img/address.png') no-repeat;
 }

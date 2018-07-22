@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.css'
 import { intlShape,defineMessages } from 'react-intl'
-import IntlUtil from 'i18n/intlUtil'
+// import IntlUtil from 'i18n/intlUtil'
 
 const prefix = 'components.common.toast.toast'
 // 抽取硬编码数据
@@ -23,7 +23,7 @@ export default class Toast extends React.Component {
         this.state = {
             animateToggle:false,
             showToast:false,
-            toastContent: IntlUtil.formatMessage(this, message.nd_146840568541684y2ap)
+            toastContent: 'tips'
         }
     }
 
@@ -77,6 +77,6 @@ export default class Toast extends React.Component {
     }
 
 }
-Toast.contextTypes = {
-    intl: intlShape
-}
+// Toast.contextTypes = {
+//     intl: intlShape
+// }
