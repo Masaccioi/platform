@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import styles from './styles.css'
-
+import Icon from 'antd/lib/icon'
 export default class Header extends React.Component {
     constructor(props) {
         super(props)
@@ -12,7 +12,9 @@ export default class Header extends React.Component {
                 <div className={styles['header-logo']} />
                 <div className={styles['header-info-box']}>
                     <div className={styles['header-info']}>
-                        <i className={styles['icon'] + ' ' + styles['icon-phone']}/>
+                        {/* <i className={styles['icon'] + ' ' + styles['icon-phone']}/> */}
+                        {/* <Icon /> */}
+                        <Icon type='link' />
                         <p><a href='tel:03-5958-5800' className={styles['link-text']}>03-5958-5800</a></p>
                     </div>
                     <div className={styles['header-info']}>

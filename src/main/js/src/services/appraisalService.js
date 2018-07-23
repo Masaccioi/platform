@@ -11,7 +11,7 @@ export default new class AppraisalService extends BaseService {
             apiUrl += `&email=${email}`
         }
         if(phone) {
-            apiUrl += `&email=${phone}`
+            apiUrl += `&phone=${phone}`
         }
         return super.request({ apiUrl, method:'POST'})
     }

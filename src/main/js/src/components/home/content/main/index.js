@@ -29,7 +29,6 @@ export default class Main extends React.Component {
                     </div>
                     {
                         operator.map(item => {
-                            console.log(item)
                             return (
                                 <div className={styles['hot-product-image']} key={item.id}
                                 onClick={this.onClickOperator.bindArgs(item.id)}>

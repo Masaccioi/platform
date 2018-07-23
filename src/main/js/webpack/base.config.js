@@ -7,6 +7,7 @@ var postcssModulesValue = require('postcss-modules-values')
 var autoprefixer = require('autoprefixer')
 var postcssMixins = require('postcss-mixins')
 var precss = require('precss')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const baseDirName = path.resolve(__dirname, '../')
 
@@ -18,23 +19,11 @@ module.exports = {
         ],
         reactlibs: ['react', 'react-dom', 'react-redux', 'redux',
             'react-router', 'redux-router', 'redux-thunk', 'redux-saga'],
-        vendors: ['rx-lite', 'crypto-js', 'object-assign', 'brace',
-            'pouchdb', 'pouchdb-find', 'jquery'],
-        libs: [
-            // './static/lib/ueditor/third-party/jquery-1.10.2.min.js',
-            // './static/lib/ueditor/ueditor.config.js',
-            // './static/lib/ueditor/ueditor.all.js',
-            // './static/lib/ueditor/lang/en/en.js',
-            // './static/lib/ueditor/lang/zh-cn/zh-cn.js',
-            // './static/lib/ZeroClipboard.min.js',
-            // './static/lib/detect-element-resize.js',
-            // './static/lib/ndpay.js',
-            // './static/lib/layer/layer.js'
-        ]
+        vendors: ['jquery']
     },
     output: {
         path: path.join(baseDirName, '../webapp'),
-        publicPath: '/',
+        publicPath: './',
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].chunk.js'
     },
@@ -51,18 +40,12 @@ module.exports = {
             "window.jQuery": "jquery"
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'libs',
-            filename: 'libs',
-            async: true
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
             names: ['reactlibs', 'vendors'],
             filename: '[name].bundle.js',
             minChunks: Infinity
         }),
         new CopyWebpackPlugin([
             {from: path.join(baseDirName, 'static'), to: path.join(baseDirName, '../webapp/static')},
-            // {from: path.join(baseDirName, 'res'), to: path.join(baseDirName, '../webapp/res')},
             {from: path.join(baseDirName, 'config.js'), to: path.join(baseDirName, '../webapp/config.js')},
             {from: path.join(baseDirName, 'WEB-INF'), to: path.join(baseDirName, '../webapp/WEB-INF')}
         ]),
@@ -72,22 +55,14 @@ module.exports = {
             inject: 'body',
             filename: 'index.html'
         }), //根目录
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({}),
         new webpack.optimize.AggressiveMergingPlugin({moveToParents: true})
     ],
     resolve: {
         alias: {
-            basecomponent: path.resolve(baseDirName, 'src/components/base'),
             styles: path.resolve(baseDirName, 'styles'),
-            // i18n: path.resolve(baseDirName, 'src/i18n'),
             img: path.resolve(baseDirName, 'static/img'),
             static: path.resolve(baseDirName, 'static'),
-            base: path.resolve(baseDirName, 'src/components/base'),
-            utils: path.resolve(baseDirName, 'src/utils'),
-            css: path.resolve(baseDirName, 'styles/common/css'),
-            templateEditor: path.resolve(baseDirName, 'src/modules/templateEditor'),
-            minderDemo: path.resolve(baseDirName, 'src/modules/minderDemo')
         },
         modulesDirectories: [
             'node_modules', 'common', 'img'
@@ -98,7 +73,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: [
-                    path.resolve(baseDirName, 'styles/common/css/base/antd-mobile.css'),
+                    path.resolve(baseDirName, 'styles/common/css/base/antd.min.css'),
                     path.resolve(baseDirName, 'styles/common/css/base/skin/default/layer.css')
                 ],
                 include: [
@@ -110,7 +85,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 include: [
-                    path.resolve(baseDirName, 'styles/common/css/base/antd-mobile.css'),
+                    path.resolve(baseDirName, 'styles/common/css/base/antd.min.css'),
                     path.resolve(baseDirName, 'styles/common/css/base/skin/default/layer.css')
                 ],
                 loader: 'style-loader!css-loader!postcss-loader'
