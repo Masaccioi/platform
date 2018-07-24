@@ -58,7 +58,7 @@ export default class Banner extends React.Component {
                 <div className={styles['banner-item']}>
                     <div className={styles['banner-item-title']}>
                         <span className={styles['title-icon']}> || </span>
-                        最新情報
+                        所在地
                     </div>
                     <div className={styles['banner-item-content']}>
                         <div className={styles['address-img']}/>

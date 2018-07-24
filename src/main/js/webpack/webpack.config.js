@@ -17,18 +17,18 @@ var withThis ='<div id="root"></div>' +
     '<script src="./dist/app.bundle.js"></script>'
 
 var cnt = fs.readFileSync(path.resolve(__dirname, 'index-template.html'))
-fs.writeFileSync('index.html', cnt.toString().replace(replaceThis, withThis).replace(/\<title.*title\>/, '<title>platform</title>'))
+fs.writeFileSync('index.html', cnt.toString().replace(replaceThis, withThis).replace(/\<title.*title\>/, '<title>東京,白ロム,パソコン,カメラ,家電,化粧品の高額買取なら白ロム一番</title>'))
 
 module.exports = {
     ...baseConfig,
     devtool: 'cheap-module-eval-source-map',
     entry: {
         app: [
-            'webpack-dev-server/client?http://localhost:3030',
-            'webpack/hot/only-dev-server',
+            // 'webpack-dev-server/client?http://localhost:3030',
+            // 'webpack/hot/only-dev-server',
             './src/index'
         ],
-        vendors: [ 'react', 'react-dom', 'react-redux', 'redux', 'jquery', 'q', 'react-router',  'crypto-js', 'object-assign' ],
+        vendors: [ 'react', 'react-dom', 'react-redux', 'redux', 'jquery', 'react-router'],
         libs: [
             // './static/lib/ueditor/third-party/jquery-1.10.2.min.js',
             // './static/lib/ueditor/ueditor.config.js',

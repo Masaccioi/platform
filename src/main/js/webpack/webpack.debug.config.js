@@ -34,7 +34,7 @@ var config = {
             {from: path.join(baseDirName, 'WEB-INF'), to: path.join(baseDirName, '../webapp/WEB-INF')}
         ]),
         new HtmlWebpackPlugin({
-            title: 'platform',
+            title: '東京,白ロム,パソコン,カメラ,家電,化粧品の高額買取なら白ロム一番',
             template: path.resolve(__dirname, 'index-template.html'),
             inject: 'body',
             filename: 'index.html'

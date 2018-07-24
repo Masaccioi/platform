@@ -5,7 +5,6 @@ import DevTools from '../containers/devTools'
 import createHistory from 'history/lib/createHashHistory'
 //import { createHistory } from 'history';
 import thunk from 'redux-thunk'
-import createLogger from 'redux-logger'
 import rootReducer from '../reducers'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from '../saga/rootSaga'

@@ -4,8 +4,6 @@
 
 import CONFIG from '../constants/config'
 import authUtils from '../utils/authUtils'
-import { Schema, arrayOf, normalize } from 'normalizr'
-import { result, camelizeKeys } from 'humps'
 import fetch from 'isomorphic-fetch'
 
 export default class {

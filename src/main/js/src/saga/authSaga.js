@@ -1,13 +1,12 @@
 import authUtils from '../utils/authUtils'
 import { put, take, call, select } from 'redux-saga/effects'
 import * as actionTypes from '../actions/actionTypes.js'
-import { decamelizeKeys, camelizeKeys } from 'humps'
 import ucService from '../services/ucService.js'
 
 export function* login({userName, passwords}) {
     try {
         let response = yield ucService.login(userName, passwords)
-        response = camelizeKeys(response)
+        // response = camelizeKeys(response)
         let name = response['nickName'] || response['realName']
         let orgId = response['orgId']
         authUtils.saveAuth(response['accessToken'],

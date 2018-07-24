@@ -12,7 +12,7 @@
     float: left;
     width: 200px;
     height: 70px;
-    background: url('./img/logo.jpg') no-repeat;
+    background: url('img/logo.jpg') no-repeat;
 }
 .header-info-box{
     float: right;
@@ -54,24 +54,24 @@
 .icon-phone{
     width: 30px;
     height: 30px;
-    background-image: url('./img/phone.png');
+    background-image: url('img/phone.png');
 }
 .icon-time{
     width: 25px;
     height: 25px;
-    background-image: url('./img/time.png');
+    background-image: url('img/time.png');
 }
 .icon-email{
     width: 25px;
     height: 25px;
-    background-image: url('./img/email.png');
+    background-image: url('img/email.png');
 }
 .icon-mobile{
-    top: 2px;
-    left: -43px;
-    width: 25px;
-    height: 35px;
-    background-image: url('./img/mobile.png');
+    top: 4px;
+    left: -39px;
+    width: 27px;
+    height: 29px;
+    background-image: url('img/mobile.png');
 }
 .link-text{
     color: #666;

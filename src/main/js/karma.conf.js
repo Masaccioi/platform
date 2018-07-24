@@ -15,14 +15,14 @@ module.exports = function (config) {
         ],
         frameworks: ['mocha', 'chai-as-promised', 'sinon-chai'],
         plugins: [
-            'karma-chrome-launcher',
-            'karma-mocha',
-            'karma-chai',
-            'karma-sinon',
-            'karma-sinon-chai',
-            'karma-sourcemap-loader',
-            'karma-webpack',
-            'karma-chai-as-promised'
+            // 'karma-chrome-launcher',
+            // 'karma-mocha',
+            // 'karma-chai',
+            // 'karma-sinon',
+            // 'karma-sinon-chai',
+            // 'karma-sourcemap-loader',
+            // 'karma-webpack',
+            // 'karma-chai-as-promised'
         ],
         // run the bundle through the webpack and sourcemap plugins
         preprocessors: {

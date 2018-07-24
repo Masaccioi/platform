@@ -45,35 +45,35 @@
 .icon-search{
     width: 30px;
     height: 30px;
-    background-image: url('./img/search.png');
+    background-image: url('img/search.png');
 }
 .icon-nav{
     top: 7px;
     left: -5px;
     width: 30px;
     height: 30px;
-    background-image: url('./img/nav.png');
+    background-image: url('img/nav.png');
 }
 .icon-twitter{
     top: 7px;
     left: -4px;
     width: 30px;
     height: 30px;
-    background-image: url('./img/twitter.png');
+    background-image: url('img/twitter.png');
 }
 .icon-line{
     top: 7px;
     left: -5px;
-    width: 28px;
-    height: 25px;
-    background-image: url('./img/line.png');
+    width: 32px;
+    height: 30px;
+    background-image: url('img/line.png');
 }
 .icon-message{
     top: 6px;
     left: -12px;
-    width: 33px;
-    height: 30px;
-    background-image: url('./img/message.png');
+    width: 30px;
+    height: 29px;
+    background-image: url('img/message.png');
 }
 .link-text{
     color: #bf0000;
