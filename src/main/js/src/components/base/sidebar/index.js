@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import styles from './styles.css'
+import '../../../../static/libs/widgets.js'
 export default class Sidebar extends React.Component {
     constructor(props) {
         super(props)
